@@ -13,6 +13,14 @@ const router = express.Router();
 // router middleware
 ///////////////////////////////////////
 router.use(express.json());
+//session middleware
+router.use((req, res, next) => {
+  if (req.session.loggedIn){
+      next()
+  } else {
+      res.redirect("/user/login")
+  }
+})
 
 /////////////////////////////////////////
 // Routes
