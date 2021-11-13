@@ -1,7 +1,6 @@
 {
   "name": "backend_bookmarkd",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -19,5 +18,14 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thecantaloupe/Bookmarkd-JRZZ.git"
+  },
+  "bugs": {
+    "url": "https://github.com/thecantaloupe/Bookmarkd-JRZZ/issues"
+  },
+  "homepage": "https://github.com/thecantaloupe/Bookmarkd-JRZZ#readme",
+  "description": ""
 }
