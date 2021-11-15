@@ -14,8 +14,12 @@ const { Schema, model } = mongoose;
 ////////////////////////////////////////////////
 const BookmarkSchema = new mongoose.Schema({
     title: String,
-    url: String
-})
+    url: String,
+    createdAt: {
+        type: Date,
+        default: new Date()
+    },
+});
 
 const Bookmark = mongoose.model("Bookmark", BookmarkSchema)
 

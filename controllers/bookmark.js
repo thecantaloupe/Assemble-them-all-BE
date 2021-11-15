@@ -14,13 +14,13 @@ const router = express.Router();
 ///////////////////////////////////////
 router.use(express.json());
 //session middleware
-router.use((req, res, next) => {
-  if (req.session.loggedIn){
-      next()
-  } else {
-      res.redirect("/user/login")
-  }
-})
+// router.use((req, res, next) => {
+//   if (req.session.loggedIn){
+//       next()
+//   } else {
+//       res.redirect("/user/login")
+//   }
+// })
 
 /////////////////////////////////////////
 // Routes
@@ -30,10 +30,10 @@ router.use((req, res, next) => {
 router.get("/", async (req, res) => {
   try {
     // send all the bookmarks
-    res.json(await Bookmark.find({}));
+    res.status(200).json(await Bookmark.find({}));
   } catch (error) {
     // send error
-    res.status(400).json({ error });
+    res.status(400).json({ message: message.error });
   }
 });
 // destroy route - delete request to /bookmark/:id
@@ -63,10 +63,10 @@ router.put("/:id", async (req, res) => {
 router.post("/", async (req, res) => {
   try {
     // create a new bookmark
-    res.json(await Bookmark.create(req.body));
+    res.status(201).json(await Bookmark.create(req.body));
   } catch (error) {
     //send error
-    res.status(400).json({ error });
+    res.status(409).json({ message: error.message });
   }
 });
 

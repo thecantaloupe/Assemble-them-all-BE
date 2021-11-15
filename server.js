@@ -1,16 +1,8 @@
-///////////////////////////////////
-// Dependencies
-///////////////////////////////////
-// dotenv to get our env variables
-require("dotenv").config()
-// PULL PORT variable from .env
-const {PORT = 3000} = process.env
-// import express
-const express = require("express")
-// import mongoose
-const mongoose = require("mongoose")
-// import middleware
-const middleware = require('./utils/middleware')
+//___________________
+//Dependencies
+//___________________
+const express = require("express") // import express
+const middleware = require("./utils/middleware")
 
 ////////////////////////////////
 // Application Object
@@ -26,6 +18,7 @@ middleware(app);
 ///////////////////////////////
 //Server listener
 ////////////////////////////////
+const PORT = process.env.PORT
 app.listen(PORT, () => {
     console.log(`listening on PORT ${PORT}`)
 })
