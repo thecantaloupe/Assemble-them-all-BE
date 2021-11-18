@@ -36,17 +36,12 @@ const signupR =  async (req, res) => {
     console.log("made it here")
     try {
         const user = await User.findOne({ email });
-        console.log("made it here2")
         if (user) return res.status(400).json({ statusText: "User exists" });
-        console.log("made it here3")
         if (password !== confPass) return res.status(400).json({ statusText: "Passwords don't match" });
-        console.log("made it here4")
+        console.log(req.body)
         const hashPass = await bcrypt.hash(password, 10); 
-        console.log("made it here5")
         const result = await User.create({ email, password: hashPass, name: `${firstName} ${lastName}` });
-        console.log("made it here6")
         const token = jwt.sign({ email: result.email, id: result._id }, process.env.SECRET, { expiresIn: "1h" });
-        console.log("made it here7")
         res.status(200).json({ result, token });
     } catch (error) {
         console.log(error)
