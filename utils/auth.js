@@ -26,6 +26,7 @@ module.exports = async function auth (req, res, next){
         }
         next();
     } catch (error) {
+        // console.log("here dumdum")
         console.log(error)
     }
 }

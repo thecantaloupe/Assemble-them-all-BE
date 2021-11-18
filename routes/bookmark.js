@@ -17,6 +17,7 @@ const deleteR = async (req, res) => {
     try {
       res.json(await Bookmark.findByIdAndRemove(req.params.id));
     } catch (error) {
+      console.log(error)
       res.status(400).json({ error });
     }
 };
@@ -28,6 +29,7 @@ const updateR = async (req, res) => {
         await Bookmark.findByIdAndUpdate(req.params.id, req.body, { new: true })
       );
     } catch (error) {
+      console.log(error)
       res.status(400).json({ error });
     }
 };
@@ -39,6 +41,7 @@ const createR = async (req, res) => {
       // create a new bookmark
       res.status(201).json(await Bookmark.create(req.body));
     } catch (error) {
+      console.log(error)
       //send error
       res.status(409).json({ message: error.message });
     }
