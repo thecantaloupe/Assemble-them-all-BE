@@ -22,13 +22,13 @@ const auth = require("../utils/auth.js")
 router.get("/", getR);
 
 // destroy route - delete request to /bookmark/:id
-router.delete("/:id",  deleteR);
+router.delete("/:id", auth, deleteR);
 
 // update route - put request to /bookmark/:id
-router.put("/:id",  updateR)
+router.put("/:id", auth, updateR)
 
 // Create Route - post request to /bookmark
-router.post("/",  createR);
+router.post("/", auth, createR);
 
 //////////////////////////////////////////
 // Export the Router
