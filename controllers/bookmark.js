@@ -1,41 +1,56 @@
-////////////////////////////////////////
-// Import Dependencies
-////////////////////////////////////////
-const express = require("express");
-const {getR, deleteR, updateR, createR} = require("../routes/bookmark")
+const Bookmark = require("../models/bookmark");
 
-/////////////////////////////////////////
-// Create Router
-/////////////////////////////////////////
-const router = express.Router();
 
-///////////////////////////////////////
-// router middleware
-///////////////////////////////////////
-router.use(express.json());
-// auth middleware - we can selectively add it to routes!
-// const auth = require("../utils/auth.js")
-/////////////////////////////////////////
-// Routes
-/////////////////////////////////////////
-// Index Route - get request to /bookmark
-router.get("/", getR);
+const getR = async (req, res) => {
+    try {
+      // send all the bookmarks
+      res.status(200).json(await Bookmark.find({}));
+    } catch (error) {
+      // send error
+      res.status(400).json({ message: message.error });
+    }
+};
+  
+  
+// destroy route 
+const deleteR = async (req, res) => {
+    try {
+      res.json(await Bookmark.findByIdAndRemove(req.params.id));
+    } catch (error) {
+      console.log(error)
+      res.status(400).json({ error });
+    }
+};
+  
+  // update a specified person
+const updateR = async (req, res) => {
+    try {
+      res.json(
+        await Bookmark.findByIdAndUpdate(req.params.id, req.body, { new: true })
+      );
+    } catch (error) {
+      console.log(error)
+      res.status(400).json({ error });
+    }
+};
+  
+  // Create Route - post request to /bookmark
+const createR = async (req, res) => {
+    try {
+      // create a new bookmark
+      res.status(201).json(await Bookmark.create(req.body));
+    } catch (error) {
+      console.log(error)
+      //send error
+      res.status(409).json({ message: error.message });
+    }
+};
 
-// test route
-// router.get("/:test", (req, res) => {
-//     res.send("hello again 😄")
-// })
 
-// destroy route - delete request to /bookmark/:id
-router.delete("/:id",  deleteR);
 
-// update route - put request to /bookmark/:id
-router.put("/:id",  updateR)
-
-// Create Route - post request to /bookmark
-router.post("/",  createR);
-
-//////////////////////////////////////////
-// Export the Router
-//////////////////////////////////////////
-module.exports = router;
+module.exports = {
+    getR: getR,
+    deleteR: deleteR,
+    updateR: updateR,
+    createR: createR
+}
