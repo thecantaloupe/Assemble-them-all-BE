@@ -2,7 +2,7 @@
 // Import Dependencies
 ////////////////////////////////////////
 const express = require("express");
-import { homeR } from "../controllers/home";
+const {homeR} = require("../controllers/home")
 
 /////////////////////////////////////////
 // Create Route

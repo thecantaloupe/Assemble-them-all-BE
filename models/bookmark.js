@@ -15,9 +15,12 @@ const { Schema, model } = mongoose;
 const BookmarkSchema = new mongoose.Schema({
     title: String,
     url: String,
+    name: String,
+    creator: String,
+    fileData: String,
     createdAt: {
         type: Date,
-        default: new Date()
+        default: new Date().toISOString()
     },
 });
 

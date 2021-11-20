@@ -12,7 +12,7 @@ const router = express.Router();
 ///////////////////////////////////////
 // router middleware
 ///////////////////////////////////////
-router.use(express.json());
+
 // auth middleware - we can selectively add it to routes!
 const auth = require("../utils/auth.js")
 /////////////////////////////////////////
