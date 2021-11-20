@@ -1,7 +1,12 @@
+<<<<<<< HEAD:controllers/bookmark.js
 const { Mongoose } = require("mongoose");
 const Bookmark = require("../models/bookmark");
+=======
+const Assemble = require("../models/assemble");
+>>>>>>> a607ebb9558162b41bfe576132ecb5485312f0ac:controllers/assemble.js
 
 const getR = async (req, res) => {
+<<<<<<< HEAD:controllers/bookmark.js
   try {
     // send all the bookmarks
     res.status(200).json(await Bookmark.find({}));
@@ -9,20 +14,39 @@ const getR = async (req, res) => {
     // send error
     res.status(400).json({ message: message.error });
   }
+=======
+    try {
+      // send all the bookmarks
+      res.status(200).json(await Assemble.find({}));
+    } catch (error) {
+      // send error
+      res.status(400).json({ message: message.error });
+    }
+>>>>>>> a607ebb9558162b41bfe576132ecb5485312f0ac:controllers/assemble.js
 };
 
 // destroy route
 const deleteR = async (req, res) => {
+<<<<<<< HEAD:controllers/bookmark.js
   try {
     res.json(await Bookmark.findByIdAndRemove(req.params.id));
   } catch (error) {
     console.log(error);
     res.status(400).json({ error });
   }
+=======
+    try {
+      res.json(await Assemble.findByIdAndRemove(req.params.id));
+    } catch (error) {
+      console.log(error)
+      res.status(400).json({ error });
+    }
+>>>>>>> a607ebb9558162b41bfe576132ecb5485312f0ac:controllers/assemble.js
 };
 
 // update a specified person
 const updateR = async (req, res) => {
+<<<<<<< HEAD:controllers/bookmark.js
   try {
     res.json(
       await Bookmark.findByIdAndUpdate(req.params.id, req.body, { new: true })
@@ -34,6 +58,19 @@ const updateR = async (req, res) => {
 };
 
 // Create Route - post request to /bookmark
+=======
+    try {
+      res.json(
+        await Assemble.findByIdAndUpdate(req.params.id, req.body, { new: true })
+      );
+    } catch (error) {
+      console.log(error)
+      res.status(400).json({ error });
+    }
+};
+  
+  // Create Route - post request to /Assemble
+>>>>>>> a607ebb9558162b41bfe576132ecb5485312f0ac:controllers/assemble.js
 const createR = async (req, res) => {
   const book = req.body
 

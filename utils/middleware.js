@@ -16,7 +16,7 @@ const MongoStore = require("connect-mongo")
 ///////////////////////////////
 // Routers
 ///////////////////////////////
-const BookmarkRouter = require("../routes/bookmark")
+const AssembleRouter = require("../routes/assemble")
     ,UserRouter = require("../routes/user")
     ,HomeRouter = require("../routes/home");
 // const bodyParser = require("body-parser");
@@ -29,7 +29,7 @@ const middleware = (app)=>{
     app.use(express.json({ limit: '50mb', extended: true }));
     app.use(express.urlencoded({ limit: '50mb', extended: true }));
     app.use('/', HomeRouter);
-    app.use('/bookmark', BookmarkRouter);
+    app.use('/assemble', AssembleRouter);
     app.use('/user', UserRouter);
 }
 
