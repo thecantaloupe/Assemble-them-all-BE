@@ -12,18 +12,18 @@ const { Schema, model } = mongoose;
 ////////////////////////////////////////////////
 // Models
 ////////////////////////////////////////////////
-const BookmarkSchema = new mongoose.Schema({
-    title: String,
-    url: String,
+const AssembleSchema = new mongoose.Schema({
+    health: String,
+    attack: String,
     createdAt: {
         type: Date,
         default: new Date()
     },
 });
 
-const Bookmark = mongoose.model("Bookmark", BookmarkSchema)
+const Assemble = mongoose.model("Assemble", AssembleSchema)
 
 ///////////////////////////////////////////////////
 // Export Model
 ///////////////////////////////////////////////////
-module.exports = Bookmark
+module.exports = Assemble

@@ -1,10 +1,10 @@
-const Bookmark = require("../models/bookmark");
+const Assemble = require("../models/assemble");
 
 
 const getR = async (req, res) => {
     try {
       // send all the bookmarks
-      res.status(200).json(await Bookmark.find({}));
+      res.status(200).json(await Assemble.find({}));
     } catch (error) {
       // send error
       res.status(400).json({ message: message.error });
@@ -15,7 +15,7 @@ const getR = async (req, res) => {
 // destroy route 
 const deleteR = async (req, res) => {
     try {
-      res.json(await Bookmark.findByIdAndRemove(req.params.id));
+      res.json(await Assemble.findByIdAndRemove(req.params.id));
     } catch (error) {
       console.log(error)
       res.status(400).json({ error });
@@ -26,7 +26,7 @@ const deleteR = async (req, res) => {
 const updateR = async (req, res) => {
     try {
       res.json(
-        await Bookmark.findByIdAndUpdate(req.params.id, req.body, { new: true })
+        await Assemble.findByIdAndUpdate(req.params.id, req.body, { new: true })
       );
     } catch (error) {
       console.log(error)
@@ -34,7 +34,7 @@ const updateR = async (req, res) => {
     }
 };
   
-  // Create Route - post request to /bookmark
+  // Create Route - post request to /Assemble
 const createR = async (req, res) => {
     try {
       // create a new bookmark

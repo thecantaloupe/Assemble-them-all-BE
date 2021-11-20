@@ -2,7 +2,7 @@
 // Import Dependencies
 ////////////////////////////////////////
 const express = require("express");
-const {getR, deleteR, updateR, createR} = require("../controllers/bookmark")
+const {getR, deleteR, updateR, createR} = require("../controllers/assemble")
 
 /////////////////////////////////////////
 // Create Router
@@ -18,16 +18,16 @@ const auth = require("../utils/auth.js")
 /////////////////////////////////////////
 // Routes
 /////////////////////////////////////////
-// Index Route - get request to /bookmark
+// Index Route - get request to /assemble
 router.get("/", getR);
 
-// destroy route - delete request to /bookmark/:id
+// destroy route - delete request to /assemble/:id
 router.delete("/:id", auth, deleteR);
 
-// update route - put request to /bookmark/:id
+// update route - put request to /assemble/:id
 router.put("/:id", auth , updateR)
 
-// Create Route - post request to /bookmark
+// Create Route - post request to /assemble
 router.post("/", auth, createR);
 
 //////////////////////////////////////////
