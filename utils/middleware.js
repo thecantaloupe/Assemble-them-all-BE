@@ -16,9 +16,9 @@ const MongoStore = require("connect-mongo")
 ///////////////////////////////
 // Routers
 ///////////////////////////////
-const BookmarkRouter = require("../controllers/bookmark")
-    ,UserRouter = require("../controllers/user")
-    ,HomeRouter = require("../controllers/home");
+const BookmarkRouter = require("../routes/bookmark")
+    ,UserRouter = require("../routes/user")
+    ,HomeRouter = require("../routes/home");
 // const bodyParser = require("body-parser");
 //////////////////////
 // Middleware Function
