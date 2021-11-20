@@ -12,18 +12,22 @@ const { Schema, model } = mongoose;
 ////////////////////////////////////////////////
 // Models
 ////////////////////////////////////////////////
-const BookmarkSchema = new mongoose.Schema({
-    title: String,
-    url: String,
+
+const AssembleSchema = new mongoose.Schema({
+    name: String,
+    creator: String,
+    fileData: String,
+    health: String,
+    attack: String,
     createdAt: {
         type: Date,
-        default: new Date()
+        default: new Date().toISOString()
     },
 });
 
-const Bookmark = mongoose.model("Bookmark", BookmarkSchema)
+const Assemble = mongoose.model("Assemble", AssembleSchema)
 
 ///////////////////////////////////////////////////
 // Export Model
 ///////////////////////////////////////////////////
-module.exports = Bookmark
+module.exports = Assemble

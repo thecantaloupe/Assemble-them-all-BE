@@ -24,6 +24,7 @@ module.exports = async function auth (req, res, next){
             // sub is Googles name for specific id 
             req.userId = decodedData?.sub;
         }
+        console.log(req.userId)
         next();
     } catch (error) {
         // console.log("here dumdum")
