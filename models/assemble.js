@@ -15,12 +15,12 @@ const { Schema, model } = mongoose;
 
 const AssembleSchema = new mongoose.Schema({
     title: String,
-    url: String,
     name: String,
     creator: String,
     fileData: String,
     health: String,
     attack: String,
+    defense: String,
     createdAt: {
         type: Date,
         default: new Date().toISOString()
