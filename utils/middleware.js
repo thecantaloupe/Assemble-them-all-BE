@@ -10,9 +10,6 @@ const express = require("express") // import express
     , cors = require("cors") // cors headers
 const MongoStore = require("connect-mongo")
 
-
-
-
 ///////////////////////////////
 // Routers
 ///////////////////////////////
