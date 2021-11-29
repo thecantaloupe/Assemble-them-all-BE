@@ -2,11 +2,13 @@
 
 By. Justin, Rachel, Zach, & Zen
 
+
 **Features**
 
-RESTful Routes: Index, New, Create, Edit, Update, Delete, Show
-
 Personal Card Battles
+
+Full CRUD functions: Create, Read, Update, and Delete
+
 
 **Technologies**
 
@@ -21,6 +23,9 @@ SCSS
 Netlify
 
 MongoDB
+
+React
+
 
 **Screenshots**
 
