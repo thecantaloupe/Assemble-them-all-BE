@@ -1,15 +1,18 @@
-Assemble them all
+**Assemble them all**
 By. Justin, Rachel, Zach, & Zen
 
-Features
+**Features**
 RESTful Routes: Index, New, Create, Edit, Update, Delete, Show
 Personal Card Battles
 
-Technologies
+**Technologies**
 JavaScript
 Express.JS
 EJS
 HTML/CSS
 SCSS
 
-Future Updates
+**Screenshots**
+
+
+**Future Updates**
