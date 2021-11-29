@@ -1,6 +1,6 @@
 **Assemble them all**
 
-By. Justin, Rachel, Zach, & Zen
+By Justin, Rachel, Zach, & Zen
 
 
 **Features**
